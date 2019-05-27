@@ -1,0 +1,1 @@
+export const APP_DRUPAL_URL = 'http://drupalvm.test';

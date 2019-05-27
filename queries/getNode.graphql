@@ -1,0 +1,24 @@
+query GetNode {
+  route(path: "article") {
+    path
+    ... on EntityCanonicalUrl {
+      node: nodeContext {
+        ...node
+        ...articleNode
+        ...pageNode
+      }
+    }
+  }
+}
+
+fragment node on Node {
+  title: entityLabel
+}
+
+fragment articleNode on NodeArticle {
+  type: entityBundle
+}
+
+fragment pageNode on NodePage {
+  type: entityBundle
+}
